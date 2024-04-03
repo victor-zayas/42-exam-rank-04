@@ -1,10 +1,11 @@
 #include "microshell.h"
 
-int print(char *str)
-{
-    while (*str)
-        write(2, str++, 1);
-    return (1);
+int print(char *str) {
+	int i = -1;
+
+	while (str[++i])
+		write(2, &str[i], 1);
+	return (1);
 }
 
 int cd(char **argv, int i)
